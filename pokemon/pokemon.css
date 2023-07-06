@@ -1,0 +1,89 @@
+body {
+    width: 4320px;
+    height: 1620px;
+    border: 1px solid black;
+}
+
+.column {
+    width: 1400px;
+    height: 1620px;
+    position: absolute;
+}
+
+.column-title {
+    text-align: center;
+    font-size: 100px;
+    margin: 100px 0;
+}
+
+#team {
+    left: 20px;
+}
+
+.team-member {
+    width: 1350px;
+    height: 200px;
+    background: red;
+    margin: 17px 25px;
+}
+
+#pokemon {
+    left: 1460px;
+}
+
+form {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+form input, button {
+    font-size: 40px;
+    padding: 20px;
+}
+
+button {
+    margin-top: 25px;
+}
+
+#image {
+    background: white;
+    width: 800px;
+    height: 600px;
+    margin: 0 300px;
+}
+
+#info {
+    text-align: center;
+}
+
+#info h2 {
+    font-size: 80px;
+    margin: 10px 0 0 0;
+}
+
+#info h3 {
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+#info h4 {
+    font-size: 30px;
+    margin: 0;
+}
+
+#stats {
+    left: 2900px;
+}
+
+#graph {
+    background: blue;
+    width: 1300px;
+    height: 800px;
+    margin: 50px;
+}
+
+#recommendation {
+    margin: 50px;
+    font-size: 26px;
+    text-align: justify;
+}
