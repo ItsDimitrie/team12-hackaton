@@ -4,6 +4,25 @@ body, html {
   padding: 0;
 }
 
+#text {
+  margin-top: 20%;
+  margin-left: 20%;
+  margin-right: auto;
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  text-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.9), 0 6px 20px 0 rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#logo {
+  margin-top: 4%;
+  margin-left: 5%;
+  width: 90%;
+  height: 90%;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -36,7 +55,7 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #000000;
-  z-index: 1;
+  z-index: 999;
 }
 
 .view {
@@ -45,4 +64,31 @@ header {
 
 .view.active {
   display: block;
+}
+
+#labImage {
+  width: 25%;
+  height: 25%;
+  margin-top: 15%;
+  margin-left: 20%;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.9), 0 6px 20px 0 rgba(255, 255, 255, 0.9);
+}
+
+#gameImage {
+  width: 25%;
+  height: 25%;
+  margin-top: 15%;
+  margin-left: 10%;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.9), 0 6px 20px 0 rgba(255, 255, 255, 0.9);
+}
+
+#workImage {
+  width: 25%;
+  height: 25%;
+  margin-top: 5%;
+  margin-left: 40%;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.9), 0 6px 20px 0 rgba(255, 255, 255, 0.9);
 }
