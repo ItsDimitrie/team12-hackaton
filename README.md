@@ -1,11 +1,16 @@
 # team12-hackaton - Software Enginering
 
 Wesley van Schaijk
+
 Erik van den Broek
 Issa Oppe
+
 Djairo Peeters
+
 Menno van Kranenburg
+
 Lars de Hond
+
 Dimitrie Lauer
 
 # Goal
