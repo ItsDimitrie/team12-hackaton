@@ -20,6 +20,14 @@ new Vue({
         {
             name: 'Warturtle',
             data: [8, 5, 4, 9, 5, 25],
+        },
+        {
+            name: 'Voltorb',
+            data: [80, 50, 40, 90, 50, 25],
+        },
+        {
+            name: 'Groudon',
+            data: [43, 65, 68, 86, 78, 25],
         }
       ],
       chartOptions: {
@@ -34,9 +42,9 @@ new Vue({
           enabled: false
         },
         stroke: {
-          width: [5, 5, 5, 5],
+          width: [5, 5, 5, 5, 5, 5],
           curve: 'straight',
-          dashArray: [0, 0, 0, 0]
+          dashArray: [0, 0, 0, 0, 0, 0]
         },
         title: {
           text: 'Pokémon stats',
@@ -64,28 +72,7 @@ new Vue({
                   return val
                 }
               }
-            },
-            {
-              title: {
-                formatter: function (val) {
-                  return val
-                }
-              }
-            },
-            {
-              title: {
-                formatter: function (val) {
-                  return val;
-                }
-              }
-            },
-            {
-                title: {
-                  formatter: function (val) {
-                    return val;
-                  }
-                }
-              }
+            }
           ]
         },
         grid: {
