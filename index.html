@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JRCZ Zeeland</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">JRCZ Zeeland</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <button class="nav-link btn btn-link" id="homeBtn">Home</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link btn btn-link" id="aboutBtn">About</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link btn btn-link" id="contactBtn">Contact</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="canvas-container">
+    <video id="background-video" autoplay loop muted>
+      <source src="video/Aftermovie opening Joint Research Center Zeeland  HZ University of Applied Sciences.mp4" type="video/mp4">
+    </video>
+
+    <div id="content" class="container">
+      <div id="homeView" class="view">
+        <h1>Welcome to JRCZ Zeeland</h1>
+        <p>Explore our services and facilities in the beautiful region of Zeeland.</p>
+      </div>
+
+      <div id="aboutView" class="view">
+        <h1>About JRCZ Zeeland</h1>
+        <p>The JRCZ (Jeugd Rode Kruis Zeeland) is an organization dedicated to providing assistance and support to youth in the region of Zeeland. We offer various programs, training, and events to empower and educate young individuals.</p>
+      </div>
+
+      <div id="contactView" class="view">
+        <h1>Contact JRCZ Zeeland</h1>
+        <p>For any inquiries or questions, please feel free to reach out to us using the contact information below:</p>
+        <p>Email: info@jrczzeeland.nl</p>
+        <p>Phone: +31 123 456 789</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
