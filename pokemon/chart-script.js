@@ -1,35 +1,27 @@
-new Vue({
-    el: '#app',
+export function createGraph(pokemonTeam) {
+  let pokemonStats = [];
+  
+  pokemonTeam.forEach((pokemon) => {
+    pokemonStats.push({
+      "name": pokemon.name,
+      "data": [
+        pokemon.hp,
+        pokemon.attack,
+        pokemon.defense,
+        pokemon.specialAttack,
+        pokemon.specialDefense,
+        pokemon.speed,
+      ]
+    })
+  });
+
+  new Vue({
+    el: '#graph',
     components: {
       apexchart: VueApexCharts,
     },
     data: {
-      
-      series: [{
-          name: "Squirtle",
-          data: [45, 52, 38, 24, 33, 22],
-        },
-        {
-          name: "Pikachu",
-          data: [35, 41, 62, 42, 13, 22],
-        },
-        {
-          name: 'Charizard',
-          data: [87, 57, 74, 99, 75, 225],
-        },
-        {
-            name: 'Warturtle',
-            data: [8, 5, 4, 9, 5, 25],
-        },
-        {
-            name: 'Voltorb',
-            data: [80, 50, 40, 90, 50, 25],
-        },
-        {
-            name: 'Groudon',
-            data: [43, 65, 68, 86, 78, 25],
-        }
-      ],
+      series: pokemonStats,
       chartOptions: {
         chart: {
           height: 350,
@@ -47,7 +39,7 @@ new Vue({
           dashArray: [0, 0, 0, 0, 0, 0]
         },
         title: {
-          text: 'Pokémon stats',
+          text: 'Pokémon Stats',
           align: 'center'
         },
         legend: {
@@ -79,8 +71,6 @@ new Vue({
           borderColor: '#f1f1f1',
         }
       },
-      
-      
     },
-    
-  })
+  });
+}

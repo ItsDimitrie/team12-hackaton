@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pokemon</title>
+        <link type="text/css" rel="stylesheet" href="./pokemon.css">
+    </head>
+    
+    <body>
+        <div class="column" id="team">
+            <h1 class="column-title">Team</h1>
+            <div id="team-members"></div>
+        </div>
+
+        <div class="column" id="pokemon">
+            <h1 class="column-title">Pokémon</h1>
+
+            <div class="form">
+                <input type="text" id="search-name" name="search" placeholder="Search for a Pokémon">
+                <input type="button" value="Search" id="search-button">
+            </div>
+
+            <div id="image">
+
+            </div>
+
+            <div id="info">
+                <h2 id="pokemonName"></h2>
+                <h3 id="pokemonType"></h3>
+                <h4 id="pokemonHP"></h4>
+                <h4 id="pokemonAttack"></h4>
+                <h4 id="pokemonDefense"></h4>
+                <h4 id="pokemonSAttack"></h4> 
+                <h4 id="pokemonSDefense"></h4>
+                <h4 id="pokemonSpeed"></h4>
+            </div>
+
+            <div class="form">
+                <button type="button" id="add-button" hidden="hidden">Add to Team</button>
+            </div>
+        </div>
+
+        <div class="column" id="stats">
+            <h1 class="column-title">Stats</h1>
+
+            <div id="graph">
+                <div id="chart">
+                    <apexchart type="line" height="800" width="1300" :options="chartOptions" :series="series"></apexchart>
+                </div>
+            </div>
+
+            <p id="recommendation"></p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+        <script type="module" src="./pokemon.js"></script>
+        <script type="module" src="./ai.js"></script>
+    </body>
+</html>
