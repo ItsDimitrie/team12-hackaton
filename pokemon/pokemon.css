@@ -1,0 +1,121 @@
+body {
+    width: 4320px;
+    height: 1620px;
+    border: 1px solid black;
+}
+
+.column {
+    width: 1400px;
+    height: 1620px;
+    position: absolute;
+}
+
+.column-title {
+    text-align: center;
+    font-size: 100px;
+    margin: 100px 0;
+}
+
+#team {
+    left: 20px;
+}
+
+.team-member {
+    width: 1310px;
+    height: 160px;
+    margin: 17px 25px;
+    padding: 20px;
+}
+
+.team-image {
+    height: 160px;
+    width: 160px;
+    float: left;
+    margin: 0 40px 0 0;
+}
+
+.team-image:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.team-title {
+    font-size: 70px;
+    margin: 0;
+}
+
+.team-types {
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.team-stats {
+    font-size: 25px;
+    margin: 0;
+}
+
+#pokemon {
+    left: 1460px;
+}
+
+.form {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.form input, button {
+    font-size: 40px;
+    padding: 20px;
+}
+
+button {
+    margin-top: 25px;
+}
+
+#image {
+    background: white;
+    width: 800px;
+    height: 600px;
+    margin: 0 300px;
+    text-align: center;
+}
+
+#image img {
+    height: 100%;
+}
+
+#info {
+    text-align: center;
+}
+
+#info h2 {
+    font-size: 80px;
+    margin: 10px 0 0 0;
+}
+
+#info h3 {
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+#info h4 {
+    font-size: 30px;
+    margin: 0;
+}
+
+#stats {
+    left: 2900px;
+}
+
+#graph {
+    width: 1300px;
+    height: 800px;
+    margin: 50px;
+}
+
+#recommendation {
+    margin: 50px;
+    font-size: 26px;
+    text-align: justify;
+}
