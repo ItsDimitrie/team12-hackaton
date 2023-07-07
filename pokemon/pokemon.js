@@ -202,7 +202,7 @@ function getSuggestions() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer`,
       },
       body: JSON.stringify({
         messages: [{ 'content': message, 'role': 'user' }],
