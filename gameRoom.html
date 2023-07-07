@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Babylon Template</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        html,
+        body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #renderCanvas {
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">JRCZ Zeeland</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/"><button class="nav-link btn btn-link" id="homeBtn">Home</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="selector.html"><button class="nav-link btn btn-link" id="3DButton">3D View</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <canvas id="renderCanvas"></canvas>
+
+    <script>
+        loadScene();
+
+        async function loadScene() {
+            // Prepare Babylon for action
+            const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+            const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+            let scene = new BABYLON.Scene(engine);
+
+            // Create a camera and attach it to the canvas
+            const camera = new BABYLON.FreeCamera("default camera", new BABYLON.Vector3(0, 0, -1), scene);
+            camera.speed = 0.03; // Adjust the camera speed here
+
+            // This attaches the camera to the canvas for rotation based on mouse movement
+            camera.attachControl(canvas, true, false);
+
+            // Set the boundaries for camera movement
+            const minX = -10;
+            const maxX = 10;
+            const minY = -10;
+            const maxY = 10;
+            const minZ = -10;
+            const maxZ = 10;
+
+            scene.registerBeforeRender(() => {
+                const position = camera.position;
+                if (position.x < minX) {
+                    position.x = minX;
+                } else if (position.x > maxX) {
+                    position.x = maxX;
+                }
+
+                if (position.y < minY) {
+                    position.y = minY;
+                } else if (position.y > maxY) {
+                    position.y = maxY;
+                }
+
+                if (position.z < minZ) {
+                    position.z = minZ;
+                } else if (position.z > maxZ) {
+                    position.z = maxZ;
+                }
+            });
+
+            // Load the scene and render it continuously
+            BABYLON.SceneLoader.Append("", "gameRoom.babylon", scene, function (scene) {
+                scene.scaling = new BABYLON.Vector3(100, 100, 100);
+                engine.runRenderLoop(function () {
+                    scene.render();
+                    console.log(camera.position);
+                });
+            });
+
+            // Watch for browser/canvas resize events
+            window.addEventListener("resize", function () {
+                engine.resize();
+            });
+
+            // Enable movement with W, A, S, D keys
+            const inputMap = {};
+            window.addEventListener("keydown", function (event) {
+                inputMap[event.key] = event.type === "keydown";
+            });
+            window.addEventListener("keyup", function (event) {
+                inputMap[event.key] = event.type === "keydown";
+            });
+
+            scene.registerBeforeRender(() => {
+                const cameraSpeed = camera.speed;
+
+                if (inputMap["w"] || inputMap["ArrowUp"]) {
+                    camera.position.addInPlace(camera.getDirection(BABYLON.Vector3.Forward()).scale(cameraSpeed));
+                } else if (inputMap["s"] || inputMap["ArrowDown"]) {
+                    camera.position.addInPlace(camera.getDirection(BABYLON.Vector3.Backward()).scale(cameraSpeed));
+                }
+
+                if (inputMap["a"] || inputMap["ArrowLeft"]) {
+                    camera.position.addInPlace(camera.getDirection(BABYLON.Vector3.Left()).scale(cameraSpeed));
+                } else if (inputMap["d"] || inputMap["ArrowRight"]) {
+                    camera.position.addInPlace(camera.getDirection(BABYLON.Vector3.Right()).scale(cameraSpeed));
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

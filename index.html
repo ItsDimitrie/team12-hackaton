@@ -11,7 +11,7 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">JRCZ Zeeland</a>
+      <a class="navbar-brand" href="/">JRCZ Zeeland</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,13 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <button class="nav-link btn btn-link" id="homeBtn">Home</button>
+            <a href="/"><button class="nav-link btn btn-link" id="homeBtn">Home</button></a>
           </li>
           <li class="nav-item">
-            <button class="nav-link btn btn-link" id="aboutBtn">About</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link btn btn-link" id="contactBtn">Contact</button>
+            <a href="selector.html"><button class="nav-link btn btn-link" id="3DButton">3D View</button></a>
           </li>
           <li class="nav-item">
             <button class="nav-link btn btn-link" id="pokeBtn">Pokemon</button>
@@ -36,6 +33,7 @@
   </header>
 
   <div id="canvas-container">
+    <img src="img/JRCZ Logo.png" id="logo" alt="">
     <video id="background-video" autoplay loop muted>
       <source src="video/Aftermovie opening Joint Research Center Zeeland  HZ University of Applied Sciences.mp4"
         type="video/mp4">
