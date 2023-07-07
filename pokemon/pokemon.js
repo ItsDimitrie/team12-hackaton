@@ -97,7 +97,6 @@ function savePokemon() {
   pokemonTeam.push(currentPokemon);
   updateStatsGraph();
   updateTeamList();
-  getSuggestions();
 }
 
 /** Get the Pokemon from the API */
@@ -175,6 +174,9 @@ function updateTeamList() {
 
     // Add the member to the team
     document.getElementById('team-members').appendChild(teamMember);
+
+    // Check if the recommendation button should be displayed
+    document.getElementById('reccomend-button').hidden = pokemonTeam.length === 0;
   });
 }
 
@@ -187,7 +189,6 @@ function removePokemon(pokemonName) {
   pokemonTeam = pokemonTeam.filter((pokemon) => pokemon.name !== pokemonName);
   updateStatsGraph();
   updateTeamList();
-  getSuggestions();
 }
 
 /** Get suggestions from the API */
@@ -195,12 +196,13 @@ function getSuggestions() {
   if (pokemonTeam.length > 0) {
     const message = 'Hello, can you give me some recommendations for my team? I have ' + pokemonTeam.map((pokemon) => pokemon.name).join(', ') + '.';
     const url = 'https://api.openai.com/v1/chat/completions';
+    document.getElementById('recommendation').innerHTML = 'Loading recommendations...';
 
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer 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`,
       },
       body: JSON.stringify({
         messages: [{ 'content': message, 'role': 'user' }],
@@ -218,3 +220,4 @@ function getSuggestions() {
 
 // Create events for the save button
 document.getElementById("add-button").onclick = savePokemon;
+document.getElementById("reccomend-button").onclick = getSuggestions;
